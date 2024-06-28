@@ -3,6 +3,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 import React, { useRef, useState } from 'react';
 import Header from '../components/header';
+import './Cordinates.css'
 
 // eslint-disable-next-line react/prop-types
 const PDFViewer = ({ file, onCoordinateClick }) => {
@@ -57,12 +58,13 @@ const InputFile = () => {
 
   const handleCoordinateClick = ({ x, y }) => {
     console.log(`Coordinates: x=${x}, y=${y}`);
-    setCoordinate([x, y])
+    setCoordinate([Math.round(x), Math.round(y)])
   };
 
   return (
     <>
     <Header />
+    <div className='container'>
     <div>
       <h1>Selecione um arquivo e clique para ver as coordenadas</h1>
       <input type="file" accept="application/pdf" onChange={handleFileChange} />
@@ -70,7 +72,8 @@ const InputFile = () => {
       {selectedFile && (
         <PDFViewer file={selectedFile} onCoordinateClick={handleCoordinateClick} />
       )}
-      {coordinate.length > 0 && <p>{`x = ${coordinate[0]} , y = ${coordinate[1]}`}</p>}
+      {coordinate.length > 0 && <p>{`Coordenadas: x = ${coordinate[0]} , y = ${coordinate[1]}`}</p>}
+    </div>
     </>
   );
 };
