@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: calc(50%);
+  background-color: red;
+}
+
+.container label {
+  width: 120px;
+}

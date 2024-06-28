@@ -35,12 +35,12 @@ const modifyPdf = async (pdfBytes, data) => {
     color: rgb(0, 0, 0),
   });
 
-  // firstPage.drawText(data.prazo, {
-  //   x: 115,
-  //   y: height - 190,
-  //   size: 12,
-  //   color: rgb(0, 0, 0),
-  // });
+  firstPage.drawText(data.dia, {
+    x: 207,
+    y: 455,
+    size: 12,
+    color: rgb(0, 0, 0),
+  });
 
   // firstPage.drawText(data.total, {
   //   x: 115,
@@ -72,7 +72,8 @@ function Generate() {
       nome: 'Nome do Fulano',
       CPF: '999.999.999-99',
       RG: '22222222-2',
-      endereço: 'endereço do fulano, xxx'
+      endereço: 'endereço do fulano, xxx',
+      dia: '10'
     }
     generatePdf(data);
   };
@@ -88,16 +89,3 @@ function Generate() {
 }
 
 export default Generate
-
-
-const buttonLabels = [
-  "27", "23", "19", "15", "11", "07", "03",
-  
-  "28", "24", "20", "16", "12", "08", "04",
-  
-  "30", "26", "22", "18", "14", "10", "06", "02",
-  
-  "29", "25", "21", "17", "13", "09", "05", "01"
-];
-
-
