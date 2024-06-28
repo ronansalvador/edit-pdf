@@ -7,3 +7,9 @@
 canvas {
   cursor: crosshair;
 }
+
+@media (width < 1200px) {
+  .container {
+    flex-direction: column;
+  }
+}
